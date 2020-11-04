@@ -2,9 +2,10 @@ package mission02;
 
 import java.util.Scanner;
 
-public class Indian {
+class IndianNames {
 	
-	public static void indianYear(int year) {
+	
+	public void indianYear(int year) {
 	
 		String[] y = {"말 많은", "푸른", "어두운", "조용한", 
 				"웅크린", "백색", "지혜로운", "용감한",
@@ -14,7 +15,7 @@ public class Indian {
 			System.out.println(y[i]);
 		}
 	
-	public static void indianMonth(int month) {
+	public void indianMonth(int month) {
 		String[] m = {"늑대", "태양", "양", "매", "황소", "불꽃", "나무", 
 				"달빛", "말", "돼지", "하늘", "바람"};
 		
@@ -23,7 +24,7 @@ public class Indian {
 		
 		}
 	
-	public static void indianDay(int day) {
+	public void indianDay(int day) {
 		String[] d = {"와(과) 함께 춤을", "의 기상", "은(는) 그림자 속에",
 				"의 화신", "의 노예", "의 마법사", "의 환생", "의 죽음",
 				"아래에서", "를(을) 보라", "이(가) 노래하다", "의 그림자",
@@ -36,8 +37,10 @@ public class Indian {
 		
 		}
 	
-	
+}
 
+public class Indian {
+	
 	public static void main(String[] args) {
 		
 			Scanner s = new Scanner(System.in);
@@ -47,9 +50,14 @@ public class Indian {
 			int month = s.nextInt();
 			int day = s.nextInt();
 			
-			indianYear(year); indianMonth(month); indianDay(day);
+			IndianNames loadNames = new IndianNames();
+			loadNames.indianYear(year);
+			loadNames.indianYear(month);
+			loadNames.indianYear(day);
 			
-			
+			s.close();
 
 	}
+	
 }
+
