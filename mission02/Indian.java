@@ -4,51 +4,39 @@ import java.util.Scanner;
 
 public class Indian {
 	
-	public static void indianyear(int year) {
-		String y;
-		
-		if (year%10 == 0) {
-			y = "시끄러운";
-			System.out.println(y);
-			
+	public static void indianYear(int year) {
+	
+		String[] y = {"말 많은", "푸른", "어두운", "조용한", 
+				"웅크린", "백색", "지혜로운", "용감한",
+				"날카로운", "욕심많은"};
+	
+		int i = year%10;
+			System.out.println(y[i]);
 		}
 	
-		if (year%10 == 1) {
-			y = "푸른";
-		}
+	public static void indianMonth(int month) {
+		String[] m = {"늑대", "태양", "양", "매", "황소", "불꽃", "나무", 
+				"달빛", "말", "돼지", "하늘", "바람"};
 		
-		if (year%10 == 2) {
-			y = "어두운";
-		}
+	
+		System.out.println(m[month - 1]);
 		
-		if (year%10 == 3) {
-			y = "조용한";
 		}
+	
+	public static void indianDay(int day) {
+		String[] d = {"와(과) 함께 춤을", "의 기상", "은(는) 그림자 속에",
+				"의 화신", "의 노예", "의 마법사", "의 환생", "의 죽음",
+				"아래에서", "를(을) 보라", "이(가) 노래하다", "의 그림자",
+				"의 일격", "에게 쫓기는 남자", "의 행진", "의 왕", "의 유령",
+				"을 죽인자", "는(은) 맨날 잠잔다", "처럼", "의 고향", "의 전사",
+				"은(는) 나의 친구", "의 노래", "의 정령", "의 파수꾼", "의 악마",
+				"와(과) 같은 사나이", "를(을) 쓰러뜨린 자", "의 혼", "은(는) 말이 없다"};
 		
-		if (year%10 == 4) {
-			y = "웅크린";
-		}
+		System.out.println(d[day - 1]);
 		
-		if (year%10 == 5) {
-			y = "푸른";
 		}
-		
-		if (year%10 == 6) {
-			y = "지혜로운";
-		}
-		
-		if (year%10 == 7) {
-			y = "용감";
-		}
-		
-		if (year%10 == 8) {
-			y = "날카로운";
-		}
-		
-		if (year%10 == 9) {
-			y = "욕심많은";
-		}
-	}
+	
+	
 
 	public static void main(String[] args) {
 		
@@ -59,7 +47,7 @@ public class Indian {
 			int month = s.nextInt();
 			int day = s.nextInt();
 			
-			indianyear(year);
+			indianYear(year); indianMonth(month); indianDay(day);
 			
 			
 
