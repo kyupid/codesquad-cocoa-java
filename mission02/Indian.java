@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 class IndianNames {
 	
+	String[] indianNameResult = { "", "", "" };
 	
 	public void indianYear(int year) {
 	
@@ -12,7 +13,7 @@ class IndianNames {
 				"날카로운", "욕심많은"};
 	
 		int i = year%10;
-			System.out.println(y[i]);
+		y[i] = indianNameResult[0];
 		}
 	
 	public void indianMonth(int month) {
@@ -20,7 +21,7 @@ class IndianNames {
 				"달빛", "말", "돼지", "하늘", "바람"};
 		
 	
-		System.out.println(m[month - 1]);
+		m[month - 1] = indianNameResult[1];
 		
 		}
 	
@@ -33,7 +34,7 @@ class IndianNames {
 				"은(는) 나의 친구", "의 노래", "의 정령", "의 파수꾼", "의 악마",
 				"와(과) 같은 사나이", "를(을) 쓰러뜨린 자", "의 혼", "은(는) 말이 없다"};
 		
-		System.out.println(d[day - 1]);
+		d[day - 1] = indianNameResult[2];
 		
 		}
 	
@@ -51,13 +52,10 @@ public class Indian {
 			int day = s.nextInt();
 			
 			IndianNames loadNames = new IndianNames();
-			loadNames.indianYear(year);
-			loadNames.indianYear(month);
-			loadNames.indianYear(day);
+			
 			
 			s.close();
 
 	}
 	
 }
-
