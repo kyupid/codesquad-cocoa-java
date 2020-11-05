@@ -2,30 +2,27 @@ package mission02;
 
 import java.util.Scanner;
 
-class IndianNames {
+public class Indian {
 	
-	String[] indianNameResult = { "", "", "" };
-	
-	public void indianYear(int year) {
+	public static String indianYear(int year) {
 	
 		String[] y = {"말 많은", "푸른", "어두운", "조용한", 
 				"웅크린", "백색", "지혜로운", "용감한",
 				"날카로운", "욕심많은"};
 	
-		int i = year%10;
-		y[i] = indianNameResult[0];
+		
+		return y[year % 10];
 		}
 	
-	public void indianMonth(int month) {
+	public static String indianMonth(int month) {
 		String[] m = {"늑대", "태양", "양", "매", "황소", "불꽃", "나무", 
 				"달빛", "말", "돼지", "하늘", "바람"};
 		
 	
-		m[month - 1] = indianNameResult[1];
-		
+		return m[month - 1];
 		}
 	
-	public void indianDay(int day) {
+	public static String indianDay(int day) {
 		String[] d = {"와(과) 함께 춤을", "의 기상", "은(는) 그림자 속에",
 				"의 화신", "의 노예", "의 마법사", "의 환생", "의 죽음",
 				"아래에서", "를(을) 보라", "이(가) 노래하다", "의 그림자",
@@ -34,14 +31,10 @@ class IndianNames {
 				"은(는) 나의 친구", "의 노래", "의 정령", "의 파수꾼", "의 악마",
 				"와(과) 같은 사나이", "를(을) 쓰러뜨린 자", "의 혼", "은(는) 말이 없다"};
 		
-		d[day - 1] = indianNameResult[2];
-		
+		return d[day - 1];
 		}
-	
-}
 
-public class Indian {
-	
+
 	public static void main(String[] args) {
 		
 			Scanner s = new Scanner(System.in);
@@ -51,11 +44,7 @@ public class Indian {
 			int month = s.nextInt();
 			int day = s.nextInt();
 			
-			IndianNames loadNames = new IndianNames();
-			
-			
-			s.close();
+			System.out.print(indianYear(year) + " " + indianMonth(month) + indianDay(day));
 
 	}
-	
 }
