@@ -1,13 +1,21 @@
 package algorithm;
 
+import java.util.Random;
 import java.util.Scanner;
+
 
 public class P2920 {
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		
 		int[] dajangjo = new int[8];
+		
+		for ( int i = 0; i < 8; i++ ) {
+			dajangjo[i] = rd.nextInt(8);
+			}
 		
 		
 		/*
@@ -16,6 +24,11 @@ public class P2920 {
 		 * 2. 그 배열 안에 랜덤으로 숫자를 차례대로 집어넣는다. 어떻게 랜덤으로 숫자를 나오게 하지?!!
 		 * 3. 인덱스 0부터 7까지 차례대로 어떤 순서로 나왔는지 판별하고
 		 * 		문제에서 요구하는대로 ascending, descending or mixed를 출력한다. 
+		 */
+		
+		/*
+		 * 랜덤 클래스에서 나온 숫자를 for문에 의해 dajangjo의 0번인덱스부터 7번인덱스까지 차례대로 넣는다.
+		 * 아 근데 숫자는 한번씩만 나와야하는데...어떻게 해결하지? 
 		 */
 
 	}
