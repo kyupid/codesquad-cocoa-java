@@ -10,15 +10,13 @@ public class P2438 {
 		int N = sc.nextInt();
 		String star = "*";
 		
-		for ( int i = 1; i <= N; i++) {
+		for ( int i = 1; i <= N; i++ ) {
 				
 				System.out.println(star);
-				star = star.concat(star);
+				star += "*";
 				/*
-				 * concat 이라는 문자를 이어붙이는 메소드를 찾았다
-				 * 이런식으로 실행해보니까 2의 제곱으로 별이 늘어났다
-				 * 이렇게하면 이전에있는 별에 별이 하나 추가된다고 생각했는데
-				 * 손코딩을 해보니까 쉽게 내가 틀렸다는 것이 이해갔다.
+				 * 이전 별갯수의 딱 하나의 별만 추가하면 되니까..
+				 * star라는 변수를 사용하지말고 그냥 직접 별을 그려서 붙이면 되겠네
 				 */
 				
 		}
