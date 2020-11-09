@@ -9,21 +9,29 @@ class C {
 	static double computerAmount = 120;
 
 	static int betAmount;
+	
+	static double numStage = 1;
+	static int numTry;
 
 	public static void youLose() {
+		numTry++;
 		System.out.println("You Lose!");
 		System.out.println("===========================");
+		System.out.println("======"+ "Stage " + numStage + " - " + numTry + "========");
 		computerAmount += betAmount;
 		playerAmount -= betAmount;
 		System.out.println("Your amount: " + playerAmount);
 		System.out.println("Computer's amount: " + computerAmount);
 		System.out.println("===========================");
+		System.out.println("===========================");
 
 	}
 	
 	public static void youWin() {
+		numTry++;
 		System.out.println("You Win!");
 		System.out.println("===========================");
+		System.out.println("======"+ "Stage " + numStage + " - " + numTry + "========");
 		playerAmount += betAmount;
 		computerAmount -= betAmount;
 		System.out.println("Your amount: " + playerAmount);
@@ -35,6 +43,8 @@ class C {
 	public static void selectNumPrint() {
 		System.out.println("Enter 1 or 2");
 		System.out.println("1. Odd  2. Even");
+		System.out.println("===========================");
+		System.out.println("===========================");
 
 	}
 }
@@ -52,12 +62,12 @@ public class OddsAndEvens {
 		System.out.println("Your amount: " + C.playerAmount);
 		System.out.println("Computer's amount: " + C.computerAmount);
 		System.out.println("===========================");
+		System.out.println("===========================");
 
 //==========================반복문 시작=============================
 
-		double numStage = 1;
 
-		while (numStage < 9) {
+		while (C.numStage < 9) {
 			if (C.playerAmount <= 0) {
 				break;
 			}
@@ -65,13 +75,17 @@ public class OddsAndEvens {
 			while (true) {
 				C.selectNumPrint();
 				int selectedNum = sc.nextInt();
-
+				System.out.println("===========================");
+				System.out.println("===========================");
 				System.out.println("Enter your bet amount");
 				System.out.println("You can bet max: " + Math.min(C.playerAmount, C.computerAmount));
+				System.out.println("===========================");
+				System.out.println("===========================");
 				C.betAmount = sc.nextInt();
 
 				if (selectedNum == 1) {
 					int rNum1 = rd.nextInt(19) + 1;
+					System.out.println("===========================");
 					System.out.println("===========================");
 					System.out.println("Computer picked: " + rNum1);
 					if (rNum1 % 2 == 1) {
@@ -86,6 +100,7 @@ public class OddsAndEvens {
 				if (selectedNum == 2) {
 					int rNum2 = rd.nextInt(19) + 1;
 					System.out.println("===========================");
+					System.out.println("===========================");
 					System.out.println("Computer picked: " + rNum2);
 					if (rNum2 % 2 == 1) {
 						C.youLose();
@@ -98,16 +113,16 @@ public class OddsAndEvens {
 				if (C.playerAmount <= 0) {
 					System.out.println("=========Game Over=========");
 					System.out.println("===========================");
-					System.out.println("Your amount: " + C.playerAmount);
-					System.out.println("Computer's amount: " + C.computerAmount);
+					System.out.println("===========================");
 					break;
 				}
 
 				// =======새로운 스테이지========
 				if (C.computerAmount <= 0) {
-					numStage++;
-					C.computerAmount = Math.round(C.playerAmount * Math.pow(1.2, numStage));
-					System.out.println("Stage " + numStage);
+					C.numStage++;
+					C.numTry = 0;
+					C.computerAmount = Math.round(C.playerAmount * Math.pow(1.2, C.numStage));
+					System.out.println("Stage " + C.numStage);
 					System.out.println("Your amount: " + C.playerAmount);
 					System.out.println("Computer's amount: " + C.computerAmount);
 					break;
