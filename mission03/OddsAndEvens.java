@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 class ClassName {
 
-	static int playerScore = 0;
-	static int computerScore = 0;
+	static int playerAmount = 100;
+	static int computerAmount = 120;
 
 	public static void youLose() {
 		System.out.println("You Lose!");
 		System.out.println("===========================");
-		computerScore++;
-		System.out.println("Your score: " + ClassName.playerScore);
-		System.out.println("Computer's score: " + ClassName.computerScore);
+		computerAmount++;
+		System.out.println("Your amount: " + playerAmount);
+		System.out.println("Computer's amount: " + computerAmount);
 		System.out.println("===========================");
 
 	}
@@ -21,9 +21,9 @@ class ClassName {
 	public static void youWin() {
 		System.out.println("You Win!");
 		System.out.println("===========================");
-		playerScore++;
-		System.out.println("Your score: " + ClassName.playerScore);
-		System.out.println("Computer's score: " + ClassName.computerScore);
+		playerAmount++;
+		System.out.println("Your amount: " + playerAmount);
+		System.out.println("Computer's amount: " + computerAmount);
 		System.out.println("===========================");
 
 	}
@@ -46,22 +46,26 @@ public class OddsAndEvens {
 		String playerName = sc.nextLine();
 
 		System.out.println("Hi, " + playerName + ".");
-		System.out.println("Your score: " + ClassName.playerScore);
-		System.out.println("Computer's score: " + ClassName.computerScore);
+		System.out.println("Your score: " + ClassName.playerAmount);
+		System.out.println("Computer's score: " + ClassName.computerAmount);
 		System.out.println("===========================");
 //==========================반복문 시작=============================
-	
 
-		while (ClassName.playerScore < 5 && ClassName.computerScore < 5) {
+		while (true) {
 			ClassName.selectNumPrint();
 			int selectedNum = sc.nextInt();
+			System.out.println("Enter your bet amount");
+			System.out.println("You can bet max: " + 
+			Math.min(ClassName.playerAmount, ClassName.computerAmount));
+			int betAmount = sc.nextInt();
+			
 			if (selectedNum == 1) {
 				int rNum1 = rd.nextInt(19) + 1;
 				System.out.println("===========================");
 				System.out.println("Computer picked: " + rNum1);
 				if (rNum1 % 2 == 1) {
 					ClassName.youWin();
-					
+
 				}
 				if (rNum1 % 2 == 0) {
 					ClassName.youLose();
