@@ -25,29 +25,26 @@ public class P2920Messedup {
 			}
 	
 		}
-			
-
 		//잘 나오는지 확인
-//		for ( int intname = 0; intname < 8; intname++ ) {
-//			System.out.print(dajangjo[intname]);
-//		}
-		
+		for ( int intname = 0; intname < 8; intname++ ) {
+			System.out.print(dajangjo[intname]);
+		}
+		System.out.println();
 		
 		//ascending
-		Loop1 :
-		for ( int k = 0; k < 8; k++ ) {
-			if (k + 1 == dajangjo[k]) {
-				if (dajangjo[7] == 8) {
-					System.out.println("Ascending");
-					break Loop1;
-				}
-				continue;
-			}else{
-				break;
+		String s = "";
+		for ( int k = 0; k < dajangjo.length - 1; k++ ) {
+			if ( dajangjo[k] == dajangjo[k + 1] - 1) {
+				s = "ascending";
 			}
-		}System.out.println("Mixed");
-		
-		
+			else if ( dajangjo[k] == dajangjo[k + 1] + 1 ) {
+				s = "descending";
+			}
+			else {
+				s = "mixed";
+				break;
+			}System.out.println(s);
+		}
 		
 		
 	
