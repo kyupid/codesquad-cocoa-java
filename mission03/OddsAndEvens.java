@@ -3,27 +3,28 @@ package mission03;
 import java.util.Random;
 import java.util.Scanner;
 
-class Selectnum {
+public class OddsAndEvens {
 
-	
-	public int selectnum() {
-		Scanner sc = new Scanner(System.in);
+	public static void youLose() {
+		System.out.println("You Lose!");
 		System.out.println("===========================");
+	}
+	
+	public static void youWin() {
+		System.out.println("You Win!");
+		System.out.println("===========================");
+	}
+	
+	public static void selectNumPrint() {
 		System.out.println("Enter 1 or 2");
 		System.out.println("1. Odd");
 		System.out.println("2. Even");
-		int selectedNum = sc.nextInt();
 
-		return selectedNum;
 	}
-}
-
-public class OddsAndEvens {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Random rd = new Random();
-		Selectnum s = new Selectnum();
 
 		System.out.println("Enter your name");
 		String playerName = sc.nextLine();
@@ -34,32 +35,34 @@ public class OddsAndEvens {
 		System.out.println("Hi, " + playerName + ".");
 		System.out.println("Your score: " + playerScore);
 		System.out.println("Computer's score: " + computerScore);
-		s.selectnum();
+		System.out.println("===========================");
 //==========================반복문 시작=============================
 		while (playerScore < 5 && computerScore < 5) {
-
-			if (s.selectnum() == 1) {
+			selectNumPrint();
+			int selectedNum = sc.nextInt();
+			if (selectedNum == 1) {
 				int rNum1 = rd.nextInt(19) + 1;
 				System.out.println("Computer picked: " + rNum1);
 				if (rNum1 % 2 == 1) {
-					System.out.println("You Win!");
+					youWin();
 					playerScore++;
+
 				}
 				if (rNum1 % 2 == 0) {
-					System.out.println("You Lose!");
+					youLose();
 					computerScore++;
 				}
 			}
 
-			if (s.selectnum() == 2) {
+			if (selectedNum == 2) {
 				int rNum2 = rd.nextInt(19) + 1;
 				System.out.println("Computer picked: " + rNum2);
 				if (rNum2 % 2 == 1) {
-					System.out.println("You Lose!");
+					youLose();
 					computerScore++;
 				}
 				if (rNum2 % 2 == 0) {
-					System.out.println("You Win!");
+					youWin();
 					playerScore++;
 				}
 			}
