@@ -20,52 +20,58 @@ public class Game {
 		s = new Scanner(System.in);
 		playerName = s.next();
 
-		System.out.println("Hi, " + playerName);
+		System.out.println("\nHi, " + playerName);
 		System.out.println("Let's start the game");
 		System.out.println("----------------------");
 
 		while (true) {
 			pick();
-			bet();
 		}
-		
+
 	}
 
-	public static void pick() {
-		System.out.println("Pick 1. Odd 2. Even");
+	private static void pick() {
+		int i = 0;
+		i++;
+		System.out.println("턴"+i);
+		System.out.println("\nPick 1. Odd 2. Even");
 		pickedNum = s.nextInt();
+		createRNum();
+		bet();
+
+		if (pickedNum == 1) {
+			System.out.println("\nComputer picked: " + rNum);
+			if (rNum % 2 == 1) {
+				System.out.println("You Win");
+			}
+			if (rNum % 2 == 0) {
+				System.out.println("You Lose");
+			}
+		
+		if (pickedNum == 2) {
+			System.out.println("\nComputer picked: " + rNum);
+			if (rNum % 2 == 1) {
+				System.out.println("You Lose");
+			}
+			if (rNum % 2 == 0) {
+				System.out.println("You Win");
+			} 
+		}
+		}
+	}
+
+	private static void createRNum() {
 
 		r = new Random();
 		rNum = r.nextInt(20);
+		System.out.println("테스트" + rNum); // 테스트용
 
 	}
 
-	public static void win() {
-		if (pickedNum == 1) {
-			System.out.println("Computer picked: " + rNum);
-
-			if (rNum % 2 == 1) {
-				System.out.println("You Win!");
-
-			}
-		}
-	}
-	
-	public static void lose() {
-		if (pickedNum == 2) {
-			System.out.println("Computer picked: " + rNum);
-		
-			if (rNum % 2 == 0) {
-				System.out.println("You Win");
-			}
-		}
-	}
-
-	public static void bet() {
-		System.out.println("Enter the amount to bet.");
+	private static void bet() {
+		System.out.println("\nEnter the amount to bet.");
 		System.out.println("Maximum bet: " + Math.min(playerMoney, computerMoney));
 		betAmount = s.nextInt();
 
 	}
-
 }
