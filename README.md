@@ -1,4 +1,4 @@
-# 코드스쿼드 코코아 과정
+# Code Squad Cocoa Java
 ---
 Mission 01
 Gugudan (Print multiplication table)
