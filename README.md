@@ -1,16 +1,16 @@
 # 코드스쿼드 코코아 과정
 ---
 Mission 01
-구구단
+Gugudan (Print multiplication table)
 
 Mission 02
-인디언 이름 짓기
+Game Indian's name (Print name according to date of birth)
 
 Mission 03
-홀짝 게임 만들기
+Game odds or evens (A game where you can bet by matching odd or even numbers)
 
 Mission 03_2
-가계부 만들기
+Basic account book
 
 ---
-깃에서 필요없는 파일 어떻게 삭제?
+
