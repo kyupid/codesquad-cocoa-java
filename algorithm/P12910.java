@@ -25,26 +25,25 @@ class Solution {
     		}
     	}
     	
+    	arr2 = new int[count];
+    	
     	if (count == 0) {
 			temp = new int[1];
 			temp[0] = -1;
 			return temp;
 		}
     	
-    	arr2 = new int[count];
     	
-    	for (int i = 0; i < arr.length; i++) {
-    		if (arr[i] % divisor == 0) {
-    			for (int j = 0; j < count; j++ ) { 
-    				arr2[j] = arr[i]; 
-    			}
+    	count = -1;
+    	for (int j = 0; j < arr.length; j++) {
+    		if (arr[j] % divisor == 0) {
+    			count++;
+    			arr2[count] = arr[j];
     		}
     	}
     	
     	Arrays.sort(arr2);
-		return arr2;
-    	
-	
+    	return arr2;
 		
     	
    	}
