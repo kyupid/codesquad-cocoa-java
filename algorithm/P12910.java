@@ -53,7 +53,9 @@ public class P12910 {
 
 	public static void main(String[] args) {
 		Solution s = new Solution();
-		s.solution(IntArray, Divisor);
+		int[] arr3 = {1, 2, 3, 4};
+		int divisor = 3;
+		s.solution(arr3, divisor);
 		
 
 	}
