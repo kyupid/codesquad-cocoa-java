@@ -13,20 +13,16 @@ class Hhmmss {
 			{ "🤣", "이", "삼", "사", "오", "십" },
 			{ "🤣", "일", "이", "삼", "사", "오" },
 			{ "오", "육", "칠", "팔", "구", "초" }
-			};
-	
+			}; // String[][] clock = new String[9][6]
 	
 	void run() {
-		for (int i = 0; i < clock.length; i++) {
-			for (int j = 0; j < clock[0].length; j++) {
-				clock[i][j] = "🤣";
-			}
-		}
+		
 		
 		int count = 0;
 		while (true) {
+			for (int i = 0; i < 25; i++)System.out.println();
 			count++;
-				
+			init();
 			LocalTime cT = LocalTime.now();
 			hh(cT.getHour(), cT.getMinute());
 			mm(cT.getMinute());
@@ -45,6 +41,14 @@ class Hhmmss {
 			}catch (Exception ex) {
 			}//try catch() end
 		}//while() end
+	}
+	
+	private void init() {
+		for (int i = 0; i < clock.length; i++) {
+			for (int j = 0; j < clock[0].length; j++) {
+				clock[i][j] = "🤣";
+			}
+		}
 	}
 	
 	private void hh(int h, int m) {
@@ -170,6 +174,7 @@ class Hhmmss {
 	}
 	
 	private void ss(int s) {
+
 		if (s / 10 == 1) {
 			clock[6][5] = "십";
 		}
@@ -220,6 +225,4 @@ class Hhmmss {
 			clock[8][5] = "초";
 		}
 	}
-	
-	
 }
