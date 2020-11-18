@@ -12,5 +12,9 @@ Game odds or evens (A game where you can bet by matching odd or even numbers)
 Mission 03_2
 Basic account book
 
+Mission 04
+Hangeul Clock
+Calendar
+Merge them into one program.
 ---
 
