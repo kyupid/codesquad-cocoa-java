@@ -14,11 +14,9 @@ public class Main {
 		int year = scan.nextInt();
 		System.out.println("Month?");
 		int month = scan.nextInt();
-		System.out.println("Date?");
-		int date = scan.nextInt();
 		scan.close();
 		
-		Cal calendar = new Cal(year, month, date);
+		Cal calendar = new Cal(year, month);
 		calendar.run();
 	}
 }
