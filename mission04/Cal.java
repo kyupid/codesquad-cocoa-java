@@ -9,7 +9,6 @@ public class Cal {
 //	private final String ANSI_GREEN = "\u001B[32m";
 //  private final String ANSI_RESET = "\u001B[0m";
 //  private final int today = cal.get(Calendar.DATE);
-    
 	private int year;
 	private int month;
 
@@ -23,8 +22,14 @@ public class Cal {
 
 	private void setYm() {
 		cal.set(Calendar.YEAR, year);
-		cal.set(Calendar.MONTH, month - 1);
+		cal.set(Calendar.MONTH, month - 1); //month 는 0부터11까지
 	}
+	
+	private void getCurrentYm() {
+		this.year = cal.get(Calendar.YEAR);
+		this.month = cal.get(Calendar.MONTH) + 1;
+	}
+	
 
 	private void init() {
 
@@ -45,6 +50,12 @@ public class Cal {
 		init();
 		printDates();
 
+	}
+	
+	void run2() {
+		getCurrentYm();
+		init();
+		printDates();
 	}
 
 	private void printDates() {
