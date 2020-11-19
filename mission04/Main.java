@@ -15,7 +15,7 @@ public class Main {
 		if (temp != null) {
 			System.out.println("Year?");
 			System.out.print(">>");
-			year = scan.nextInt();
+		 	year = scan.nextInt();
 			System.out.println("Month?");
 			System.out.print(">>");
 			month = scan.nextInt();
@@ -45,8 +45,16 @@ public class Main {
 
 		if (ClockOrCal.equals("clock")) {
 
-			Hhmmss clock = new Hhmmss();
-			clock.run();
+			Hhmmss clock = new Hhmmss(); //hhmmss 는 thread
+			clock.start();
+			
+			try { 
+				clock.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			selectClockOrCal();
 
 		} else if (ClockOrCal.equals("cal")) {
 

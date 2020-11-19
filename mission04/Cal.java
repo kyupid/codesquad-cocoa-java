@@ -5,10 +5,10 @@ import java.util.Calendar;
 public class Cal {
 	Calendar cal = Calendar.getInstance();
 
-   //Function colored today
-//	private final String ANSI_GREEN = "\u001B[32m";
-//  private final String ANSI_RESET = "\u001B[0m";
-//  private final int today = cal.get(Calendar.DATE);
+//   Function colored today
+//	private static final String ANSI_GREEN = "\u001B[32m";
+//	private static final String ANSI_RESET = "\u001B[0m";
+//	private final int today = cal.get(Calendar.DATE);
 	private int year;
 	private int month;
 
@@ -22,14 +22,13 @@ public class Cal {
 
 	private void setYm() {
 		cal.set(Calendar.YEAR, year);
-		cal.set(Calendar.MONTH, month - 1); //month 는 0부터11까지
+		cal.set(Calendar.MONTH, month - 1); // month 는 0부터11까지
 	}
-	
+
 	private void getCurrentYm() {
 		this.year = cal.get(Calendar.YEAR);
 		this.month = cal.get(Calendar.MONTH) + 1;
 	}
-	
 
 	private void init() {
 
@@ -51,7 +50,7 @@ public class Cal {
 		printDates();
 
 	}
-	
+
 	void run2() {
 		getCurrentYm();
 		init();
@@ -59,15 +58,14 @@ public class Cal {
 	}
 
 	private void printDates() {
-		
+
 		int endDate = cal.getActualMaximum(Calendar.DATE);
 		for (int i = 1; i <= endDate; i++) {
 
-			
-			//Function colored today
+//			Function colored today
 //			if (i == today) {
-//				System.out.print(ANSI_GREEN + i + ANSI_RESET + "\t");
-			
+//				System.out.print(ANSI_GREEN + "test" + ANSI_RESET + "");
+//			}
 			cal.set(Calendar.DATE, i);
 			System.out.print(i + "\t");
 
