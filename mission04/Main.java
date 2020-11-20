@@ -42,20 +42,12 @@ public class Main {
 		System.out.println("\n\nclock or cal");
 		System.out.print(">>");
 		String ClockOrCal = scan.next();
-
+		
 		if (ClockOrCal.equals("clock")) {
 
 			Hhmmss clock = new Hhmmss(); //hhmmss 는 thread
-			clock.start();
+			clock.run();
 			
-			try { 
-				clock.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			
-			selectClockOrCal();
-
 		} else if (ClockOrCal.equals("cal")) {
 
 			// 현재날짜의 달력

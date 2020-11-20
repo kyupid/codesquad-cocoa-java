@@ -1,48 +1,65 @@
 package mission04;
 
 import java.time.LocalTime;
+import java.util.Timer;
+import java.util.TimerTask;
 
 class Hhmmss {
-	String[][] clock = {
-			{ "한", "두", "세", "네", "다", "섯" },
-			{ "여", "섯", "일", "곱", "여", "덟" },
-			{ "아", "홉", "열", "한", "두", "시" },
-			{ "자", "이", "삼", "사", "오", "십" },
-			{ "정", "일", "이", "삼", "사", "오" },
-			{ "오", "육", "칠", "팔", "구", "분" },
-			{ "🤣", "이", "삼", "사", "오", "십" },
-			{ "🤣", "일", "이", "삼", "사", "오" },
-			{ "오", "육", "칠", "팔", "구", "초" }
-			}; // String[][] clock = new String[9][6]
-	
-	void run() {
-		
-		
-		int count = 0;
-		while (true) {
-			for (int i = 0; i < 25; i++)System.out.println();
-			count++;
-			init();
-			LocalTime cT = LocalTime.now();
-			hh(cT.getHour(), cT.getMinute());
-			mm(cT.getMinute());
-			ss(cT.getSecond());
-			
-			System.out.println(LocalTime.now());
-			System.out.println("\n"+ count + "회 출력");
-			for (int i = 0; i < clock.length; i++) {
-				for (int j = 0; j < clock[0].length; j++) {
-					System.out.print(clock[i][j]);
+
+//	private static final String ANSI_GREEN = "\u001B[32m"; //m 콘솔 색상 변경 by 새리
+//    private static final String ANSI_RESET = "\u001B[0m";
+//  
+	static boolean exitClock = false;
+
+	String[][] clock = { { "한", "두", "세", "네", "다", "섯" }, { "여", "섯", "일", "곱", "여", "덟" },
+			{ "아", "홉", "열", "한", "두", "시" }, { "자", "이", "삼", "사", "오", "십" }, { "정", "일", "이", "삼", "사", "오" },
+			{ "오", "육", "칠", "팔", "구", "분" }, { "🤣", "이", "삼", "사", "오", "십" }, { "🤣", "일", "이", "삼", "사", "오" },
+			{ "오", "육", "칠", "팔", "구", "초" } }; // String[][] clock = new String[9][6]
+
+	public void run() {
+
+		ThreadScanner t = new ThreadScanner();
+		t.start();
+		Timer timer = new Timer(); // 타이머라는 기능을하는 객체 생성
+		TimerTask timerTask = new TimerTask() { // 실행할 로직 설정
+
+			@Override
+			public void run() {
+				if (!exitClock) {
+					runClock();
 				}
-				System.out.println();
-			}//for() end
-			try {
-				Thread.sleep(1000);
-			}catch (Exception ex) {
-			}//try catch() end
-		}//while() end
+				else {
+					timer.cancel();
+					Main.selectClockOrCal();
+				}
+			}
+		};
+		timer.schedule(timerTask, 0, 1000); // timerTask를 0초후에 1초간격으로 실행
+
 	}
-	
+
+	void runClock() {
+//		int count = 0;
+		for (int i = 0; i < 25; i++) {
+			System.out.println();
+		}
+//		count++; // 타이머로 실행할때 반복될때 카운트는 안됨
+		init();
+		LocalTime cT = LocalTime.now(); // 궁금 메소생성 while반
+		hh(cT.getHour(), cT.getMinute());
+		mm(cT.getMinute());
+		ss(cT.getSecond());
+
+		System.out.println(LocalTime.now());
+//		System.out.println("\n" + count + "회 출력");
+		for (int i = 0; i < clock.length; i++) {
+			for (int j = 0; j < clock[0].length; j++) {
+				System.out.print(clock[i][j]);
+			}
+			System.out.println();
+		} // for() end
+	}
+
 	private void init() {
 		for (int i = 0; i < clock.length; i++) {
 			for (int j = 0; j < clock[0].length; j++) {
@@ -50,7 +67,7 @@ class Hhmmss {
 			}
 		}
 	}
-	
+
 	private void hh(int h, int m) {
 		if (13 <= h && h <= 23) {
 			h = h - 12;
@@ -120,7 +137,7 @@ class Hhmmss {
 			clock[2][5] = "시";
 		}
 	}
-	
+
 	private void mm(int m) {
 		if (m / 10 == 1) {
 			clock[3][5] = "십";
@@ -172,7 +189,7 @@ class Hhmmss {
 			clock[5][5] = "분";
 		}
 	}
-	
+
 	private void ss(int s) {
 
 		if (s / 10 == 1) {
