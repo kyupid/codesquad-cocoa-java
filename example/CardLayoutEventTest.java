@@ -31,6 +31,32 @@ class CardLayoutEventTest extends Frame {
 		buttons.add(next);
 		buttons.add(last);
 		
+
+		//버튼에 이벤트 리스너를 추가한
+		first.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				//CardLayout의 첫번째 slide (Panel)이 보이도록 한다
+				card.first(slide);
+			}
+		});
+		prev.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				//CardLayout의 첫번째 slide (Panel)이 보이도록 한다
+				card.previous(slide);
+			}
+		});
+		next.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				//CardLayout의 첫번째 slide (Panel)이 보이도록 한다
+				card.next(slide);
+			}
+		});
+		last.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				//CardLayout의 첫번째 slide (Panel)이 보이도록 한다
+				card.last(slide);
+			}
+		});
 		
 	}
 	
