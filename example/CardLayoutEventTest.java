@@ -74,6 +74,12 @@ class CardLayoutEventTest extends Frame {
 		card5.setBackground(Color.pink);
 		card5.add(new Label("This is a fifth page"));
 		
+		// slide(Panel)에 card1(Panel)을 "1"이란 이름으로 추가한다.
+		slide.add(card1, "1");
+		slide.add(card2, "2");
+		slide.add(card3, "3");
+		slide.add(card4, "4");
+		slide.add(card5, "5");
 		
 	}
 	
