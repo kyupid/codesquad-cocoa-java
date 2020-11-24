@@ -22,7 +22,14 @@ class CardLayoutEventTest extends Frame {
 		buttons = new Panel();
 		buttons.setLayout(new FlowLayout());
 		
-		
+		first = new Button("<<");
+		prev = new Button("<");
+		next = new Button(">");
+		last = new Button(">>");
+		buttons.add(first);
+		buttons.add(prev);
+		buttons.add(next);
+		buttons.add(last);
 		
 		
 	}
