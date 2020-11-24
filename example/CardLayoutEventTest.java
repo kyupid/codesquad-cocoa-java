@@ -58,10 +58,27 @@ class CardLayoutEventTest extends Frame {
 			}
 		});
 		
+		card1 = new Panel();
+		card1.setBackground(Color.gray);
+		card1.add(new Label("This is a first page."));
+		card2 = new Panel();
+		card2.setBackground(Color.orange);
+		card2.add(new Label("This is a second page"));
+		card3 = new Panel();
+		card3.setBackground(Color.blue);
+		card3.add(new Label("This is a third page"));
+		card4 = new Panel();
+		card4.setBackground(Color.cyan);
+		card4.add(new Label("This is a fourth page"));
+		card5 = new Panel();
+		card5.setBackground(Color.pink);
+		card5.add(new Label("This is a fifth page"));
+		
+		
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		CardLayoutEventTest a = new CardLayoutEventTest("CardLayoutEventTest");
 
 	}
 
