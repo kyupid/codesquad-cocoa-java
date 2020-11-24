@@ -1,4 +1,4 @@
-package algorithm.bingo;
+package algorithm.eventtest;
 
 public class Main {
 	

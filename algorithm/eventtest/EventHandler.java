@@ -1,4 +1,4 @@
-package algorithm.bingo;
+package algorithm.eventtest;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 class EventHandler implements ActionListener {
 
 	
-	public void actionPerformed (ActionEvent e) {
-		String id = T.tfId.getText();
+	public void actionPerformed (ActionEvent e) { //버튼을 클릭했을때 실제 발생함
+		String id = T.tfId.getText(); //텍스트가 뭔지 다른 변수에 저장한다.
 		String password = T.tfPwd.getText();
-		if (!id.equals("kyu")) {
+		if (!id.equals("kyu")) { 
 			System.out.println("아이디가 틀렸습니다");
 			//id를 다시 입력할수있또록 focus를 다시준
 			T.tfId.requestFocus();

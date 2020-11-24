@@ -1,4 +1,4 @@
-package algorithm.bingo;
+package algorithm.eventtest;
 
 
 import java.awt.*;
