@@ -10,6 +10,13 @@ class CardLayoutEventTest extends Frame {
 	Panel card1, card2, card3, card4, card5; // slide에 포함될 Panel들
 	CardLayout card;
 	
+	CardLayoutEventTest (String title) {
+		super(title); //조상인 Frame의 생성자 Frame(String title)을 호출 이걸 그대로 가져다쓸거다?
+		
+		
+		
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
