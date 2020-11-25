@@ -107,8 +107,10 @@ class Gomoku extends Frame implements MouseListener {
 			System.out.println("test2 " + "x:" + x + "y:" + y);
 			
 			// 3. It draws the stone.
+			gImg.drawOval(x - STONE_SIZE/2, y - STONE_SIZE/2, STONE_SIZE, STONE_SIZE);
 			gImg.setColor(Color.white);
 			gImg.fillOval(x - STONE_SIZE/2, y - STONE_SIZE/2, STONE_SIZE, STONE_SIZE);
+			
 			
 			
 			//4. 
