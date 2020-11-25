@@ -7,7 +7,7 @@ import java.awt.event.*;
 class Gomoku extends Frame implements MouseListener {
 	
 	final int LINE_NUM = 9; //오목판 줄 수
-	final int LINE_WIDTH = 30; //오목판 줄 간
+	final int LINE_WIDTH = 30; //오목판 줄 간격
 	final int BOARD_SIZE = LINE_WIDTH * (LINE_NUM-1); // 오목판의 크기
 	final int STONE_SIZE = (int)(LINE_WIDTH * 0.8); // 돌의 크기
 	
@@ -85,6 +85,13 @@ class Gomoku extends Frame implements MouseListener {
 		if (x < FRAME_WIDTH || x > FRAME_WIDTH ) return;
 		if (y < FRAME_HEIGHT || y > FRAME_HEIGHT ) return;
 		
+		// 2. x and y is changed to the closest intersection.
+		if (x % LINE_WIDTH != 0) {
+			x = (int)(Math.round((double)(x)/10)) * 10;
+		}
+		if (y % LINE_WIDTH != 0) {
+			y = (int)(Math.round((double)(y)/10)) * 10;
+		}
 		
 	}
 	
