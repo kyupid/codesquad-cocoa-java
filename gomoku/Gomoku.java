@@ -81,26 +81,31 @@ class Gomoku extends Frame implements MouseListener {
 		5. repaint() . 를 호출한다
 		*/
 		
-		System.out.println("test1");
-		// 1. It doesn't draw the stone if x and y cross the line.
-		if (x < FRAME_WIDTH || x > FRAME_WIDTH ) System.out.println("test2");;
-		if (y < FRAME_HEIGHT || y > FRAME_HEIGHT ) System.out.println("Test3");;
-		System.out.println("x와y가 경계를 벗어나지않았습니다");
-		
-		// 2. x and y is changed to the closest intersection.
-		if (x % LINE_WIDTH != 0) {
-			x = (int)(Math.round((double)(x)/10)) * 10;
+	
+		System.out.println("test1" + "x:" + x + "y:" + y);
+		// 1. if x and y don't cross the line
+		if ( X0 <= x && x <= X0 + BOARD_SIZE && Y0 <= y && y <= Y0 + BOARD_SIZE ) {
+			
+			// 2. x and y is changed to the closest intersection.
+			if (x % LINE_WIDTH != 0) {
+				x = (int)(Math.round((double)(x)/10)) * 10;
+			}
+			if (y % LINE_WIDTH != 0) {
+				y = (int)(Math.round((double)(y)/10)) * 10;
+			}
+			System.out.println("test2 " + "x:" + x + "y:" + y);
+			
+			// 3. It draws the stone.
+			gImg.drawOval(x - STONE_SIZE/2, y - STONE_SIZE/2, STONE_SIZE, STONE_SIZE);
+			
+			//4. 
+			if(e.getModifiers() == e.BUTTON3_MASK) {
+				gImg.fillOval(x - STONE_SIZE/2, y - STONE_SIZE/2, STONE_SIZE, STONE_SIZE);
+
+			}
+		}else {
+			return;
 		}
-		if (y % LINE_WIDTH != 0) {
-			y = (int)(Math.round((double)(y)/10)) * 10;
-		}
-		System.out.println("x:" + x + "y:" + y);
-		System.out.println("x와y가 가장가까운 x와 y의 교차점으로 지정됩니다");
-		
-		// 3. It draws the stone.
-		gImg.drawOval(x - STONE_SIZE/2, y - STONE_SIZE/2, STONE_SIZE, STONE_SIZE);
-		System.out.println("원을 그립니");
-		
 		repaint();
 	}
 	
