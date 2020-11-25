@@ -82,16 +82,27 @@ class Gomoku extends Frame implements MouseListener {
 		*/
 		
 	
-		System.out.println("test1" + "x:" + x + "y:" + y);
 		// 1. if x and y don't cross the line
 		if ( X0 <= x && x <= X0 + BOARD_SIZE && Y0 <= y && y <= Y0 + BOARD_SIZE ) {
 			
 			// 2. x and y is changed to the closest intersection.
 			if (x % LINE_WIDTH != 0) {
-				x = (int)(Math.round((double)(x)/10)) * 10;
+				x = (int)(Math.round((double)(x)/10) * 10);
+				if ( x % LINE_WIDTH != 0 ) {
+					x = x + 10;
+					if (x % LINE_WIDTH != 0 ) {
+						x = x - 20;
+					}
+				}
 			}
 			if (y % LINE_WIDTH != 0) {
-				y = (int)(Math.round((double)(y)/10)) * 10;
+				y = (int)(Math.round((double)(y)/10) * 10);
+				if ( y % LINE_WIDTH != 0 ) {
+					y = y + 10;
+					if (y % LINE_WIDTH != 0 ) {
+						y = y - 20;
+					}
+				}
 			}
 			System.out.println("test2 " + "x:" + x + "y:" + y);
 			
