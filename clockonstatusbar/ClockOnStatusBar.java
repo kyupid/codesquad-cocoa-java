@@ -4,22 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 
-class ClockOnStatusBar extends Frame{
-	
-	ClockOnStatusBar(String title) {
-		super(title);
-		
-		setSize(300, 300);
-		setVisible(true);
-		
-	}
-	
-
+class ClockOnStatusBar {
 
 	public static void main(String[] args) {
 		
-		Clock ck = new Clock();
-		ClockOnStatusBar c = new ClockOnStatusBar(ck.clock()); 
+		
+		
+		Frame f = new Frame("Put real-time clock here");
 	}
 
 }
