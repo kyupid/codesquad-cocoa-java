@@ -3,7 +3,8 @@ package clockonstatusbar;
 import java.awt.*;
 import java.awt.event.*;
 
-import java.time.LocalTime;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 
 class ClockOnStatusBar {
@@ -12,8 +13,22 @@ class ClockOnStatusBar {
 		
 		
 		Frame f = new Frame();
-		f.setTitle("Put real-time clock here");
+		
+		Date now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		String clock = sdf.format(now);
+		
 		f.setVisible(true);
+		
+		while (true) {
+			f.setTitle(clock);
+			try {
+				Thread.sleep(1000);
+			}catch (Exception e) {
+			}
+		}
+		
+		
 		
 	}
 
