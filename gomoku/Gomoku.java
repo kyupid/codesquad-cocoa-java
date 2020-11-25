@@ -93,6 +93,11 @@ class Gomoku extends Frame implements MouseListener {
 			y = (int)(Math.round((double)(y)/10)) * 10;
 		}
 		
+		// It draws the stone.
+		Panel p = new Panel();
+		Graphics g = p.getGraphics();
+		g.drawOval(x - STONE_SIZE/2, y - STONE_SIZE/2, STONE_SIZE, STONE_SIZE);
+		
 	}
 	
 	public void mouseClicked(MouseEvent e) {} // MouseListener
