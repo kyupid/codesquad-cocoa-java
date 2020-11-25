@@ -12,6 +12,9 @@ class ClockOnStatusBar {
 		
 		
 		Frame f = new Frame();
+		f.setTitle("Put real-time clock here");
+		f.setVisible(true);
+		
 	}
 
 }
