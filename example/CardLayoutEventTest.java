@@ -75,11 +75,21 @@ class CardLayoutEventTest extends Frame {
 		card5.add(new Label("This is a fifth page"));
 		
 		// slide(Panel)에 card1(Panel)을 "1"이란 이름으로 추가한다.
+		//카드는 추가한 순서대로 나타남, 예를들어서 1,5번카드바꾸면 첫번째카드가 5 마지막카드가 1
 		slide.add(card1, "1");
 		slide.add(card2, "2");
 		slide.add(card3, "3");
 		slide.add(card4, "4");
 		slide.add(card5, "5");
+		
+		add("South", buttons);
+		add("Center", slide);
+		
+		setSize(200, 200);
+		setLocation(200, 200);
+		setVisible(true);
+		
+		card.show(slide, "1"); //가장 처음에 보여주는 카드
 		
 	}
 	
